@@ -29,6 +29,7 @@ SUPPORTED_MODELS = [
     'bam.pz',
     'bam',
     'egg',
+    'egg.pz',
     'fbx',
     'obj'
 ]

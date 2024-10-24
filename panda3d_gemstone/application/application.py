@@ -62,6 +62,7 @@ def get_home_directory() -> str:
         result = '.%s' % os.sep
 
     return result
+
 class EngineApplication(Service):
     """
     Base class for all Gemstone applications
@@ -229,6 +230,7 @@ class GemstoneApplication(EngineApplication, InternalObject):
         self.__showbase_cls.notify = _logging.get_notify_category('showbase')
         self.__base = self.__showbase_cls(windowType=self.__window_type)
         self.__base.set_exit_callback(self.destroy)
+
         runtime.window = self.__base.win
         runtime.task_mgr = self.__base.task_mgr
         runtime.camera = self.__base.camera
@@ -241,9 +243,8 @@ class GemstoneApplication(EngineApplication, InternalObject):
 
         # Replace IO access
         self.notify.info('Setting up environment...')
-        from direct.stdpy import file
-        __builtins__['open'] = file.open
-        __builtins__['file'] = file.open
+        from panda3d_gemstone.io import file_system
+        file_system.switch_file_functions_to_vfs()
 
         # Setup singletons
         self.__http = HTTPManager.instantiate_singleton()

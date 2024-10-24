@@ -149,8 +149,7 @@ class EditorHelpMenu(MenuBase):
         %(app_name)s - Gemstone Editor (%(app_version)s)
 
         Written by:
-        Jordan Maxwell <jordan.maxwell@nxt-games.com>
-        Caleb Marshall <caleb.marshall@nxt-games.com>
+        Jordan Maxwell <me@jordan-maxwell.info>
 
         Copyright %(org_name)s, 2020
         %(org_domain)s
@@ -159,8 +158,8 @@ class EditorHelpMenu(MenuBase):
         about_info = {
             'app_name': config.GetString('app-name', 'Anvil Level Editor'),
             'app_version': config.GetString('app-version', '1.0.0'),
-            'org_name': config.GetString('org-name', 'Rumrunner Entertainment, LLC'),
-            'org_domain': config.GetString('org-domain', 'https://www.nxt-games.com')
+            'org_name': config.GetString('org-name', 'Digital Descent, LLC'),
+            'org_domain': config.GetString('org-domain', 'https://www.digitaldescent.co')
         }
 
         about_message = about_message % about_info

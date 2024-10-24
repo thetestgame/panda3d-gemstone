@@ -38,7 +38,7 @@ class QStatusUpdater(QTimer, InternalObject):
         QThread.__init__(self)
         InternalObject.__init__(self)
         fps = config.GetInt('status-update-fps', 10)
-        self.setInterval(1000/fps)
+        self.setInterval(int(1000/fps))
         self.status_bar = status_bar
         self.scene_analyzer = SceneGraphAnalyzer()
         self.scene_analyzer.add_node(base.render.node())
