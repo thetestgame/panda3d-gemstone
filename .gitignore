@@ -127,3 +127,11 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+# Logs
+logs/
+
+# CEF
+**/VideoDecodeStats/
+**/webrtc_event_logs/
+**/blob_storage/
