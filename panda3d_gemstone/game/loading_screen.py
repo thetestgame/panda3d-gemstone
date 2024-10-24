@@ -33,7 +33,7 @@ class LoadingScreenBase(Service, Configurable, Singleton, InternalObject):
     Base class for all loading screens in the Gemstone framework
     """
 
-    def __init__(Self, config_path: str, service_name: str = 'LoadingScreen'):
+    def __init__(self, config_path: str, service_name: str = 'LoadingScreen'):
         Service.__init__(self, service_name or self.__class__.__name__)
         Singleton.__init__(self)
         Configurable.__init__(self, config_path)
