@@ -22,7 +22,7 @@ Gemstone's dependencies break down into two categories. Required and optional. G
 To install the latest Gemstone framework run the following commands from your development root folder. 
 
 ```bash
-git clone https://github.com/thetestgame/p3d-gemstone
+git clone https://github.com/thetestgame/panda3d-gemstone
 cd panda3d-gemstone
 python setup.py install
 ```
