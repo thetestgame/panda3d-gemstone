@@ -43,7 +43,6 @@ __version_file = '__version__.py'
 __description = 'top level framework built for the Panda3D game engine'
 __license = 'MIT'
 __repository = 'https://github.com/thetestgame/panda3d-gemstone'
-__thirdparty = ['panda3d.core']
 __classifiers = [
     'Development Status :: 2 - Pre-Alpha',
     'Natural Language :: English',
@@ -64,23 +63,6 @@ def __has_thirdparty(import_string: str) -> bool:
         pass
 
     return found
-
-def __verify_thirdparty(imports: object) -> None:
-    """
-    Verifies all the required system installed dependencies are found
-    """
-
-    if isinstance(imports, list):
-        import_paths = imports
-    else:
-        import_paths = [imports]
-
-    for import_path in import_paths:
-        found = __has_thirdparty(import_path)
-        if not found:
-            import_name = import_path.split('.')[0]
-            print('Missing required thirdparty dependency: %s' % import_name)
-            sys.exit(2)
 
 def __codec_read(*parts) -> object:
     """
@@ -177,7 +159,6 @@ def __main() -> int:
     Main entry point for the setup script
     """
 
-    __verify_thirdparty(__thirdparty)
     __setup(
         name=__root_package,
         description=__description,
