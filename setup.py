@@ -145,14 +145,14 @@ def __get_authors() -> str:
     Returns all authors as a string
     """
 
-    authors = []
-    results = subprocess.check_output(['git', 'log', '--pretty="%an"']).decode()
-    results = results.split('\n')
+    authors = ['Jordan Maxwell']
+    #results = subprocess.check_output(['git', 'log', '--pretty="%an"']).decode()
+    #results = results.split('\n')
 
-    for author in results:
-        author = author.replace('"', '')
-        if author not in authors and author != '':
-            authors.append(author)
+    #for author in results:
+    #    author = author.replace('"', '')
+    #    if author not in authors and author != '':
+    #        authors.append(author)
 
     return __list_as_string(authors)
 
@@ -186,7 +186,7 @@ def __main() -> int:
         version=__find_version(__root_package, __version_file),
         author=__get_authors(),
         url=__repository,
-        install_requires=__get_requirements(),
+        #install_requires=__get_requirements(),
         packages=__get_modules(__root_package),
         zip_safe=False,
         classifiers=__classifiers)
